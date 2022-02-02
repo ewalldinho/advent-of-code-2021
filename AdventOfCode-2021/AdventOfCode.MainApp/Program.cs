@@ -21,7 +21,7 @@ namespace AdventOfCode.MainApp
                     break;
                 case 2:
                     // C# zone
-                    const AdventDays day = AdventDays.Day1;
+                    const AdventDays day = AdventDays.Day01;
                     var input = PuzzleData.GetData(day);
 
                     Console.WriteLine($"Day #{day}");
