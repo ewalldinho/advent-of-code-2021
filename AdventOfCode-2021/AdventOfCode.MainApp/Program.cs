@@ -18,6 +18,7 @@ namespace AdventOfCode.MainApp
                     TextUI.Run();
                     break;
                 case 1:
+                    ShowGui();
                     break;
                 case 2:
                     // C# zone
@@ -39,6 +40,69 @@ namespace AdventOfCode.MainApp
             
         }
 
+        private static void ShowGui()
+        {
+            (string part1, string part2) answer;
+            var ui = new AppUI();
+            var selectedDay = 1;
+            var isRunning = true;
+            while (isRunning)
+            {
+                ui.Display(selectedDay);
+
+                while (!Console.KeyAvailable)
+                {
+                    Thread.Sleep(10);
+                }
+
+                var key = Console.ReadKey();
+                while (Console.KeyAvailable)
+                    key = Console.ReadKey();
+
+                switch (key.Key)
+                {
+                    case ConsoleKey.Escape:
+                        isRunning = false;
+                        break;
+                    case ConsoleKey.LeftArrow:
+                        selectedDay -= 1;
+                        if (selectedDay < 1) selectedDay = 25;
+                        break;
+                    case ConsoleKey.RightArrow:
+                        selectedDay += 1;
+                        if (selectedDay > 25) selectedDay = 1;
+                        break;
+                    case ConsoleKey.Enter:
+                        ui.DisplayProgress();
+                        try
+                        {
+                            answer = RunSolution(selectedDay);
+
+                            ui.DisplayResults(answer.part1, answer.part2);
+                        }
+                        catch (Exception ex)
+                        {
+                            ui.DisplayChoice(selectedDay);
+
+                            Console.WriteLine(ex.Message);
+
+                            while (!Console.KeyAvailable)
+                            {
+                                Thread.Sleep(10);
+                            }
+                        }
+
+                        break;
+                }
+
+                if (key.KeyChar >= '0' || key.KeyChar <= '9')
+                {
+                    Console.Write(key.KeyChar);
+                }
+
+                Thread.Sleep(10);
+            }
+        }
         
         private static (string part1, string part2) RunSolution(int day)
         {
