@@ -18,6 +18,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AdventOfCode.Csharp\AdventOfCode.Csharp.csproj" />
+    <ProjectReference Include="..\AdventOfCode.Fsharp\AdventOfCode.Fsharp.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
 
