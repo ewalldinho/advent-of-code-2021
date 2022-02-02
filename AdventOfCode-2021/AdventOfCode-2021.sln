@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode.Csharp", "Adve
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AdventOfCode.Fsharp", "AdventOfCode.Fsharp\AdventOfCode.Fsharp.fsproj", "{45B06124-3F21-4D51-A2A2-D075D64F6206}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode.MainApp", "AdventOfCode.MainApp\AdventOfCode.MainApp.csproj", "{0255BE01-F031-4E2A-8B2F-A8CBA9427AD1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
