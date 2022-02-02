@@ -15,6 +15,7 @@ namespace AdventOfCode.MainApp
             switch (uiMode)
             {
                 case 0:
+                    TextUI.Run();
                     break;
                 case 1:
                     break;
