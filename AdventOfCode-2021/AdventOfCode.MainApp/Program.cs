@@ -74,6 +74,34 @@ namespace AdventOfCode.MainApp
                     Console.WriteLine($"Day 02: {answerD02P1}, {answerD02P2}");
                     break;
 
+                case AdventDays.Day03:
+                    if (part is null)
+                    {
+                        var answerD3P1 = Fsharp.Solutions.Day03.solvePart1(inputData);
+                        var answerD3P2 = Fsharp.Solutions.Day03.solvePart2(inputData);
+                        answerPart1 = $"{answerD3P1}";
+                        answerPart2 = $"{answerD3P2}";
+                    }
+                    else
+                    {
+                        switch (part)
+                        {
+                            case Parts.Part1:
+                                var answerD3P1 = Fsharp.Solutions.Day03.solvePart1(inputData);
+                                answerPart1 = $"{answerD3P1}";
+                                break;
+                            case Parts.Part2:
+                            {
+                                var answerD3P2 = Fsharp.Solutions.Day03.solvePart2(inputData);
+                                answerPart2 = $"{answerD3P2}";
+                                break;
+                            }
+                            default:
+                                throw new ArgumentOutOfRangeException(nameof(part), part, null);
+                        }
+                    }
+                    break;
+
                 default:
                     Console.WriteLine($"Day {dayOfAdvent} still has no solution.");
                     break;
