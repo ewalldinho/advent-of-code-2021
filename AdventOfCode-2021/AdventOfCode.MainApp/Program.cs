@@ -31,6 +31,8 @@ namespace AdventOfCode.MainApp
                     Console.WriteLine($"{results.part2}");
                     break;
                 case 3:
+                    // F# zone
+                    RunFsharpSolution(AdventDays.Day01, null);
                     break;
             }
             
@@ -50,6 +52,27 @@ namespace AdventOfCode.MainApp
             var part2Result = puzzleSolution.CalculateSolution(Parts.Part2, inputData);
 
             return (part1Result, part2Result);
+        }
+
+        private static void RunFsharpSolution(AdventDays dayOfAdvent, Parts? part = null)
+        {
+            var inputData = PuzzleData.GetData(dayOfAdvent);
+            var answerPart1 = "part1 - not solved";
+            var answerPart2 = "part2 - not solved";
+
+            switch (dayOfAdvent)
+            {
+                case AdventDays.Day01:
+                    var answerD01P1 = Fsharp.Solutions.Day01.solvePart1(inputData);
+                    var answerD01P2 = Fsharp.Solutions.Day01.solvePart2(inputData);
+                    Console.WriteLine($"Day 01: {answerD01P1}, {answerD01P2}");
+                    break;
+                default:
+                    Console.WriteLine($"Day {dayOfAdvent} still has no solution.");
+                    break;
+            }
+
+            Console.WriteLine($"Day {dayOfAdvent}: {answerPart1}, {answerPart2}");
         }
     }
 
