@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="InputData\Day01Data.fs" />
+    <Compile Include="Solutions\Day01.fs" />
   </ItemGroup>
 
 </Project>
