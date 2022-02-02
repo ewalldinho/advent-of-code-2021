@@ -67,6 +67,13 @@ namespace AdventOfCode.MainApp
                     var answerD01P2 = Fsharp.Solutions.Day01.solvePart2(inputData);
                     Console.WriteLine($"Day 01: {answerD01P1}, {answerD01P2}");
                     break;
+
+                case AdventDays.Day02:
+                    var answerD02P1 = Fsharp.Solutions.Day02.solvePart1(inputData);
+                    var answerD02P2 = Fsharp.Solutions.Day02.solvePart2(inputData);
+                    Console.WriteLine($"Day 02: {answerD02P1}, {answerD02P2}");
+                    break;
+
                 default:
                     Console.WriteLine($"Day {dayOfAdvent} still has no solution.");
                     break;
